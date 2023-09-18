@@ -5,14 +5,14 @@ import Link from 'next/link'
 import React from 'react'
 
 type CardType = {
-    BlogData: Omit<Blog, "id">
+    BlogData: Blog
 }
 
 const BlogCard: React.FC<CardType> = ({ BlogData }) => {
 
     return (
         <Link
-            href={"/"}
+            href={`/blogs/${BlogData.id}`}
             title={BlogData.title}
             className='group blog-card'
         >

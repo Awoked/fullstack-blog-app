@@ -4,15 +4,19 @@ const loading = () => {
 
     return (
         <div>
-            <ul className='space-y-4'>
-                {
-                    [...Array(20)].map((_,idx) =>(
-                        <li key={idx} className='h-10 border bg-gray-200 animate-pulse'>
+            <div className="container">
 
-                        </li>
-                    ))
-                }
-            </ul>
+                <div className='h-28 bg-gray-800 animate-pulse mb-20'></div>
+                <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+                    {
+                        [...Array(30)].map((_, idx) => (
+                            <li key={idx} className='h-96 border bg-gray-800 animate-pulse'>
+
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     )
 }

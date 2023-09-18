@@ -47,7 +47,7 @@ const ParallaxContent: React.FC<SectionType> = ({ SectionData }) => {
             <div className="cover h-full">
                 <div
                     style={{ backgroundImage: "url(/images/parallaxcontent.webp)" }}
-                    className='h-full w-full object-cover bg-fixed bg-no-repeat bg-cover'
+                    className='h-full w-full object-cover bg-fixed bg-no-repeat bg-cover bg-center'
                 ></div>
             </div>
 

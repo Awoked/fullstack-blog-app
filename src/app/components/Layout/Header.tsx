@@ -1,20 +1,18 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation';
-import React, { useContext } from 'react'
+import { usePathname } from 'next/navigation';
+import React from 'react'
 
 import { AiOutlineSearch } from "react-icons/ai";
 
 const Header = () => {
-
     const pathname = usePathname();
-    console.log('pathname', pathname.length)
 
     return (
         <header className={`absolute w-full py-11 z-50 ${pathname.length > 1 && "bg-gray-900 relative"}`}>
             <div className="container">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-10">
 
                     <Link href={"/"}>
                         <Image
@@ -27,37 +25,13 @@ const Header = () => {
                     </Link>
 
                     <nav className='flex justify-center w-full max-lg:hidden'>
-                        <ul className='flex gap-8 font-bold text-xl text-white'>
+                        <ul className='flex gap-8 font-bold text-xl text-white w-full'>
                             <li>
                                 <Link href={"/blogs"}>
-                                    Destinations
+                                    Blogs
                                 </Link>
                             </li>
-                            <li>
-                                <Link href={"/blogs"}>
-                                    Food
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/blogs"}>
-                                    Well Being
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/blogs"}>
-                                    Sport
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/blogs"}>
-                                    Family
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"/blogs"}>
-                                    Lifestyle
-                                </Link>
-                            </li>
+
                         </ul>
                     </nav>
 

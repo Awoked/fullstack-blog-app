@@ -18,16 +18,29 @@ const Blogs: React.FC<BlogsType> = ({ blogData }) => {
             if (blogsWrapper.current) {
                 const blogCards = blogsWrapper.current.querySelectorAll(".blog-card");
 
-                ScrollTrigger.batch(blogCards, {
-                    onEnter: element => {
-                        gsap.from(element, {
-                            y: 100,
-                            stagger: 0.15,
-                        })
-                    },
+                // ScrollTrigger.batch(blogCards, {
+                //     onEnter: element => {
+                //         gsap.from(element, {
+                //             y: 100,
+                //             stagger: 0.15,
+                //         })
+                //     },
 
+                // })
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: blogsWrapper.current,
+                        start: "top bottom-=200",
+                    }
+                });
+                tl.from(blogCards, {
+                    y: 200,
+                    opacity: 0,
+                    stagger: {
+                        each: 0.06
+                    }
                 })
-
             }
         })
 
@@ -37,13 +50,13 @@ const Blogs: React.FC<BlogsType> = ({ blogData }) => {
     return (
         <section className='py-14'>
             <div className="container">
-
+        
                 <div ref={blogsWrapper} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                     {blogData?.map((data, index) => (
                         <BlogCard
                             key={index}
-                           BlogData={data}
+                            BlogData={data}
                         />
                     ))}
                 </div>

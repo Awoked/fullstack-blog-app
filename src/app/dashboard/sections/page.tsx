@@ -1,11 +1,14 @@
+
 import React from 'react'
+import Editor from '../Components/Editor'
 
 
-const page = async () => {
+const page = () => {
 
     return (
         <div>
             sections
+            <Editor />
         </div>
     )
 }

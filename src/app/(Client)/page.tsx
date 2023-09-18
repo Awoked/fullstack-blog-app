@@ -2,6 +2,7 @@ import Hero from '../components/Sections/Hero';
 import prisma from '../../../prisma/client';
 import Blogs from '../components/Sections/Blogs';
 import ParallaxContent from '../components/Sections/ParallaxContent';
+import { SectionsContent } from '@prisma/client';
 
 
 

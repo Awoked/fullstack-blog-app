@@ -22,7 +22,7 @@ const page = async () => {
                     <h1>Blogs</h1>
                 </SectionTitle>
             </SectionHeader>
-            
+                
             <section>
                 <div className="container">
                     <Blogs

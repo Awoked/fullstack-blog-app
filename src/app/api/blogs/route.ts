@@ -29,3 +29,12 @@ export async function POST(request: NextRequest) {
     }
 }
 
+export async function DELETE(req: NextRequest) {
+    const { id }: { id: number } = await req.json();
+    try {
+        const data = await prisma.blog.delete({ where: { id } });
+        return NextResponse.json({ message: "deleted", data });
+    } catch (error) {
+        return NextResponse.json({ message: "Error", error }, { status: 400 })
+    }
+}

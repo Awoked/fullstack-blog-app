@@ -39,7 +39,7 @@ const Hero: React.FC<SectionType> = ({ SectionData }) => {
             <div className="cover h-full">
                 <div
                     style={{ backgroundImage: "url(/images/hero.webp)" }}
-                    className='h-full w-full object-cover bg-fixed'
+                    className='h-full w-full object-cover bg-fixed bg-no-repeat bg-cover bg-center'
                 ></div>
             </div>
 
@@ -50,22 +50,22 @@ const Hero: React.FC<SectionType> = ({ SectionData }) => {
                         <div ref={heroContent} className='content space-y-4'>
                             <p>
                                 <strong className='text-6xl font-bold'>
-                                    Inspiration for travel by real people
+                                    {/* Inspiration for travel by real people */}
                                     {SectionData?.title}
                                 </strong>
                             </p>
                             <p>
-                                Book smart, travel simple
+                                {/* Book smart, travel simple */}
                                 {SectionData?.subTitle}
                             </p>
                         </div>
 
                         <Link
-                            href={"/"}
+                            href={SectionData?.linkHref === null ? "/" : SectionData?.linkHref}
                             className='mt-10 p-4 px-10 bg-white text-xl font-bold rounded-sm inline-block text-dark'
                             ref={heroLink}
                         >
-                            Start Reading
+                            {/* Start Reading */}
                             {SectionData?.linkText}
                         </Link>
                     </div>
