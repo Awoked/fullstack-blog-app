@@ -7,8 +7,3 @@ export function GET(req: NextRequest) {
         email: "alperk.kossay@gmail.com"
     })
 }
-
-
-export function middleware(request: NextRequest) {
-    return NextResponse.json({ message: "middleware" })
-}
