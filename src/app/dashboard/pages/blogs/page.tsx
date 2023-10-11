@@ -1,5 +1,3 @@
-import fetchData from '@/helpers/fetch'
-import { Blog } from '@prisma/client';
 import React from 'react'
 import BlogCard from '../../Components/BlogCard';
 import CreateBlog from '@/app/components/Forms/CreateBlog';
