@@ -16,7 +16,7 @@ const page = async () => {
         <section>
 
             <div className="container">
-                <CreateBlog />
+                {/* <CreateBlog /> */}
                 <div className='space-y-4 py-10'>
                     {
 
