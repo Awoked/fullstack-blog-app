@@ -5,7 +5,7 @@ import { CKEditor } from '@ckeditor/ckeditor5-react'
 
 const Editor = () => {
     return (
-        <CKEditor editor={ClassicEditor} />
+        <CKEditor editor={ClassicEditor} onChange={(d,a) => console.log('d', d, a.data.get())} />
 
     )
 }

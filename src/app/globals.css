@@ -31,3 +31,8 @@ html {
         font-size: 100%;
     }
 }
+
+
+.content h1 {
+    @apply text-6xl mb-8;
+}

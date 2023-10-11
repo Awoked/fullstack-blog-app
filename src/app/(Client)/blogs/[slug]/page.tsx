@@ -23,11 +23,30 @@ const page: React.FC<PageProps> = async ({ params }) => {
     const BlogDetail = await getBlog(params.slug);
 
     if (!BlogDetail) {
-       return redirect("/")
+        return redirect("/")
     }
-
     return (
-        <div>page {params.slug}</div>
+        <main>
+            <section>
+
+                <div className="container">
+
+                    <div className="content">
+                        <div>
+                            page {params.slug}
+
+                            <h1>
+                                {BlogDetail.title}
+                            </h1>
+                            <div dangerouslySetInnerHTML={{ __html: BlogDetail.RawContent as string }}></div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
     )
 }
 

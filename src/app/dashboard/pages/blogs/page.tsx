@@ -2,14 +2,16 @@ import fetchData from '@/helpers/fetch'
 import { Blog } from '@prisma/client';
 import React from 'react'
 import BlogCard from '../../Components/BlogCard';
+import Editor from '../../Components/Editor';
+import CreateBlog from '@/app/components/Forms/CreateBlog';
 
 
 const getBlogs = async () => {
     return await fetchData("/blogs");
 }
 
-const page = async () => {
 
+const page = async () => {
     const Blogs: {
         success: boolean;
         data: Blog[]
@@ -19,6 +21,7 @@ const page = async () => {
         <section>
 
             <div className="container">
+                <CreateBlog />
                 <div className='space-y-4 py-10'>
                     {
 
