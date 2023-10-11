@@ -61,7 +61,7 @@ const Hero: React.FC<SectionType> = ({ SectionData }) => {
                         </div>
 
                         <Link
-                            href={SectionData?.linkHref === null ? "/" : SectionData?.linkHref}
+                            href={SectionData?.linkHref ? SectionData.linkHref : "/"}
                             className='mt-10 p-4 px-10 bg-white text-xl font-bold rounded-sm inline-block text-dark'
                             ref={heroLink}
                         >
