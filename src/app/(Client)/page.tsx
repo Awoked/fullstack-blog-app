@@ -5,7 +5,7 @@ import Blogs from '../components/Sections/Blogs';
 import ParallaxContent from '../components/Sections/ParallaxContent';
 import { SectionsContent } from '@prisma/client';
 
-export const dynamic = "force-dynamic";
+export const fetchCache = 'default-no-store'
 
 
 async function getSectionsData() {
