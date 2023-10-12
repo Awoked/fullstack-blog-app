@@ -1,4 +1,4 @@
-export const dynamic = "auto";
+// export const dynamic = "auto";
 
 import Hero from '../components/Sections/Hero';
 import prisma from '../../../prisma/client';
