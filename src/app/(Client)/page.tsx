@@ -1,4 +1,3 @@
-// export const dynamic = "auto";
 
 import Hero from '../components/Sections/Hero';
 import prisma from '../../../prisma/client';
@@ -29,6 +28,8 @@ async function getSectionsData() {
 }
 
 // export const revalidate = 1200;
+export const dynamic = "force-dynamic";
+
 
 export default async function Home() {
     const SectionsData = await getSectionsData();
