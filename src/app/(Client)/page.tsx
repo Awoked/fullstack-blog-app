@@ -29,6 +29,7 @@ async function getSectionsData() {
 
 // export const revalidate = 1200;
 export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 
 export default async function Home() {
