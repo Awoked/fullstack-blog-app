@@ -1,3 +1,5 @@
+export const dynamic = "auto";
+
 import Hero from '../components/Sections/Hero';
 import prisma from '../../../prisma/client';
 import Blogs from '../components/Sections/Blogs';
@@ -7,7 +9,7 @@ import { SectionsContent } from '@prisma/client';
 
 
 async function getSectionsData() {
-    
+
 
     const SectionsData = await prisma.sectionsContent.findMany({
         where: {
