@@ -4,7 +4,19 @@ import { Blog } from "@prisma/client";
 
 
 export async function GET(request: NextRequest) {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+
     try {
+        if (id) {
+            const data = await prisma.blog.findFirst({
+                where: {
+                    id: Number(id)
+                }
+            });
+            return NextResponse.json(data, { status: 200 });
+        } 
+
         const data = await prisma.blog.findMany();
         return NextResponse.json(data, { status: 200 });
 

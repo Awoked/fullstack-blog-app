@@ -3,9 +3,11 @@ import Hero from '../components/Sections/Hero';
 import prisma from '../../../prisma/client';
 import Blogs from '../components/Sections/Blogs';
 import ParallaxContent from '../components/Sections/ParallaxContent';
-import { SectionsContent } from '@prisma/client';
 
-export const fetchCache = 'default-no-store'
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = 'force-no-store';
+
 
 
 async function getSectionsData() {
