@@ -8,28 +8,26 @@ import { SectionsContent } from '@prisma/client';
 export const dynamic = "force-dynamic";
 
 
+async function getSectionsData() {
+
+    const SectionsData = await prisma.sectionsContent.findMany({
+        where: {
+            sectionName: {
+                in: ["hero", "parallaxContent"]
+            }
+        }
+    });
+    const blogs = await prisma.blog.findMany({
+        take: 6
+    });
+
+    return {
+        Sections: SectionsData,
+        blogs
+    };
+}
 
 export default async function Home() {
-
-
-    async function getSectionsData() {
-
-        const SectionsData = await prisma.sectionsContent.findMany({
-            where: {
-                sectionName: {
-                    in: ["hero", "parallaxContent"]
-                }
-            }
-        });
-        const blogs = await prisma.blog.findMany({
-            take: 6
-        });
-    
-        return {
-            Sections: SectionsData,
-            blogs
-        };
-    }
 
     const SectionsData = await getSectionsData();
     const FindSectionData = (sectionName: string) => {
