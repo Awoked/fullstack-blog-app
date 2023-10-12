@@ -26,6 +26,8 @@ async function getSectionsData() {
     };
 }
 
+export const revalidate = 1;
+
 export default async function Home() {
     const SectionsData = await getSectionsData();
     const FindSectionData = (sectionName: string) => {
