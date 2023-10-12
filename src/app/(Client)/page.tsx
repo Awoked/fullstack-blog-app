@@ -26,7 +26,7 @@ async function getSectionsData() {
     };
 }
 
-export const revalidate = 1;
+export const revalidate = 1200;
 
 export default async function Home() {
     const SectionsData = await getSectionsData();
