@@ -12,7 +12,8 @@ async function getSectionsData() {
             sectionName: {
                 in: ["hero", "parallaxContent"]
             }
-        }
+        },
+        
     });
     const blogs = await prisma.blog.findMany({
         take: 6
@@ -23,6 +24,8 @@ async function getSectionsData() {
         blogs
     };
 }
+
+export const revalidate = 1;
 
 export default async function Home() {
     const SectionsData = await getSectionsData();
