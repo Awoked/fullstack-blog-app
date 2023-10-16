@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "../../../../prisma/client";
 import { SectionsContent } from "@prisma/client";
 
-// export const revalidate = 1;
-
 export async function GET(req: NextRequest) {
   const data = await prisma.sectionsContent.findMany();
   prisma.$disconnect();
