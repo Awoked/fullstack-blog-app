@@ -7,7 +7,7 @@ import { SectionsContent } from "@prisma/client";
 export async function GET(req: NextRequest) {
   const data = await prisma.sectionsContent.findMany();
   prisma.$disconnect();
-
+    console.log('data', data)
   return NextResponse.json(data);
 }
 export async function POST(req: NextRequest) {
