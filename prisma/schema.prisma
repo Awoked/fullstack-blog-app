@@ -28,7 +28,7 @@ model Pages {
 model SectionsContent {
   id          Int     @id @default(autoincrement())
   sectionName String?
-  title       String?
+  title       String? 
   subTitle    String?
   linkHref    String?
   linkText    String?
