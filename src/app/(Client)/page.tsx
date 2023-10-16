@@ -9,17 +9,17 @@ import { SectionsContent } from '@prisma/client';
 
 async function getSectionsData() {
 
-    const response = await fetch(process.env.API_URL + "/sectioncontent", { next: { revalidate: 1 } })
-    const SectionsData: SectionsContent[] = await response.json();
+    // const response = await fetch(process.env.API_URL + "/sectioncontent")
+    // const SectionsData: SectionsContent[] = await response.json();
 
-    console.log('SectionsData', SectionsData)
-    // const SectionsData = await prisma.sectionsContent.findMany({
-    //     where: {
-    //         sectionName: {
-    //             in: ["hero", "parallaxContent"]
-    //         }
-    //     }
-    // });
+    // console.log('SectionsData', SectionsData)
+    const SectionsData = await prisma.sectionsContent.findMany({
+        where: {
+            sectionName: {
+                in: ["hero", "parallaxContent"]
+            }
+        }
+    });
     const blogs = await prisma.blog.findMany({
         take: 6
     });
