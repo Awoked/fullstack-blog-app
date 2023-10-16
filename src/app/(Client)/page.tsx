@@ -3,18 +3,23 @@ import Hero from '../components/Sections/Hero';
 import prisma from '../../../prisma/client';
 import Blogs from '../components/Sections/Blogs';
 import ParallaxContent from '../components/Sections/ParallaxContent';
+import { SectionsContent } from '@prisma/client';
 
 
 
 async function getSectionsData() {
 
-    const SectionsData = await prisma.sectionsContent.findMany({
-        where: {
-            sectionName: {
-                in: ["hero", "parallaxContent"]
-            }
-        }
-    });
+    const response = await fetch(process.env.API_URL + "/sectioncontent", { next: { revalidate: 1 } })
+    const SectionsData: SectionsContent[] = await response.json();
+
+    console.log('SectionsData', SectionsData)
+    // const SectionsData = await prisma.sectionsContent.findMany({
+    //     where: {
+    //         sectionName: {
+    //             in: ["hero", "parallaxContent"]
+    //         }
+    //     }
+    // });
     const blogs = await prisma.blog.findMany({
         take: 6
     });
@@ -34,7 +39,7 @@ export default async function Home() {
 
     const hero = FindSectionData("hero");
     const parallaxContent = FindSectionData("parallaxContent");
-
+    console.log('hero', hero)
     return (
         <main>
             <Hero
